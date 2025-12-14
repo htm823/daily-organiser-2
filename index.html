@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+	<title>Daily Organiser</title>
+</head>
+
+<body>
+	<header class="header">
+		<div class="header__container">
+			<h1>Daily Organiser</h1>
+		</div>
+	</header>
+	<main class="main">
+		<div class="main__container">
+			<form id="add-task-form" class="task-form">
+				<input id="task" class="task-form__task-input" placeholder="New task">
+				<select id="category">
+					<option value="">All</option>
+					<option value="work">Work</option>
+					<option value="personal">Personal</option>
+				</select>
+				<button id="submit-btn" type="submit">
+					<span><i class="bi bi-plus-lg"></i></span>
+					<span>Add task</span>
+				</button>
+			</form>
+			<div class="tabs">
+				<input id="all-tab" class="tabs__all-tab" name="all" type="radio">
+				<label for="all-tab">All</label>
+				<input id="work-tab" class="tabs__work-tab" name="work" type="radio">
+				<label for="work-tab">Work</label>
+				<input id="personal-tab" class="tabs__personal-tab" name="personal" type="radio">
+				<label for="personal-tab">Personal</label>
+			</div>
+			<div class="task-control">
+				<button id="clear-all" class="task-control__clear-all-btn">
+					<span><i class="bi bi-trash3"></i></span>
+					<span>Clear all</span>
+				</button>
+			</div>
+			<ul id="task-list" class="task-list">
+				<!-- Insert tasks -->
+			</ul>
+		</div>
+	</main>
+	<footer class="footer">
+		<div class="footer__container">
+			<small class="footer__copyright">&copy; 2025 Daily Organiser</small>
+		</div>
+	</footer>
+</body>
+
+</html>
