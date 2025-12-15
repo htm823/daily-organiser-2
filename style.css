@@ -133,6 +133,11 @@ input[type="radio"] {
 	background-color: transparent;
 	border: none;
 	color: var(--text-primary-500);
+	display: none;
+}
+
+#clear-all.is-active {
+	display: block;
 }
 
 .task-control__btn-text {
