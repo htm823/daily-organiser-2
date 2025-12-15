@@ -39,7 +39,7 @@ git clone https://github.com/your-username/daily-organiser.git
 cd daily-organiser
 ```
 
-Once cloned, simply open index.html in your preferred web browser.
+Once cloned, simply open `index.html` in your preferred web browser.
 
 No build tools or additional dependencies are required.
 
