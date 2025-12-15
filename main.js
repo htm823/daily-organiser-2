@@ -50,6 +50,7 @@ function loadTasks() {
 
 	tasks = JSON.parse(storedTasks);
 	renderTasks(currentFilter);
+	updateClearAllBtnVisibility();
 }
 
 function renderTasks(filter = 'all') {
@@ -63,6 +64,14 @@ function renderTasks(filter = 'all') {
 	filteredTasks.forEach((task) => {
 		taskList.insertAdjacentHTML('beforeend', createTaskHTML(task));
 	});
+}
+
+function updateClearAllBtnVisibility() {
+	if (tasks.length) {
+		clearAllBtn.classList.add('is-active');
+	} else {
+		clearAllBtn.classList.remove('is-active');
+	}
 }
 
 taskForm.addEventListener('submit', (e) => {
@@ -86,7 +95,7 @@ taskForm.addEventListener('submit', (e) => {
 	saveTasks();
 
 	renderTasks(currentFilter);
-
+	updateClearAllBtnVisibility();
 
 	taskInput.value = '';
 	categorySelect.value = '';
@@ -114,6 +123,7 @@ taskList.addEventListener('click', (e) => {
 	saveTasks();
 
 	taskItem.remove();
+	updateClearAllBtnVisibility();
 });
 
 taskList.addEventListener('click', (e) => {
@@ -185,6 +195,7 @@ clearAllBtn.addEventListener('click', (e) => {
 	saveTasks();
 
 	taskList.innerHTML = '';
+	updateClearAllBtnVisibility();
 });
 
 allTab.addEventListener('change', () => {
