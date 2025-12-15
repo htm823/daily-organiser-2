@@ -5,10 +5,21 @@ const categorySelect = document.getElementById('category');
 const taskForm = document.getElementById('add-task-form');
 const taskList = document.getElementById('task-list');
 const clearAllBtn = document.getElementById('clear-all');
+const allTab = document.getElementById('all-tab');
+const workTab = document.getElementById('work-tab');
+const personalTab = document.getElementById('personal-tab');
 
 let tasks = [];
+let currentFilter = 'all';
 
 function createTaskHTML(task) {
+	const categoryLabel = task.category.charAt(0).toUpperCase() + task.category.slice(1).toLowerCase();
+	const isCategory =
+		task.category === 'all'
+			? ''
+			: `
+				<span class="task-list__category task-list__category--${task.category}">${categoryLabel}</span>
+			`;
 	return `
 		<li class="task-list__item" data-id="${task.id}">
 			<div class="task-list__item-left">
@@ -19,9 +30,7 @@ function createTaskHTML(task) {
 				</label>
 			</div>
 			<div class="task-list__item-right">
-				<span class="task-list__category ${task.category === 'all' ? '' : 'task-list__category--' + task.category}">
-					${task.category === 'all' ? '' : task.category}
-				</span>
+				${isCategory}
 				<div class="task-list__btns">
 					<button class="task-list__edit-btn"><i class="bi bi-pencil-square"></i></button>
 					<button class="task-list__delete-btn"><i class="bi bi-trash3 task-control__btn-icon"></i></button>
@@ -40,13 +49,18 @@ function loadTasks() {
 	if (!storedTasks) return;
 
 	tasks = JSON.parse(storedTasks);
-	renderTasks();
+	renderTasks(currentFilter);
 }
 
-function renderTasks() {
+function renderTasks(filter = 'all') {
 	taskList.innerHTML = '';
 
-	tasks.forEach((task) => {
+	const filteredTasks = tasks.filter((task) => {
+		if (filter === 'all') return true;
+		return task.category === filter;
+	});
+
+	filteredTasks.forEach((task) => {
 		taskList.insertAdjacentHTML('beforeend', createTaskHTML(task));
 	});
 }
@@ -71,20 +85,22 @@ taskForm.addEventListener('submit', (e) => {
 	tasks.push(newTask);
 	saveTasks();
 
-	taskList.insertAdjacentHTML('beforeend', createTaskHTML(newTask));
+	renderTasks(currentFilter);
+
 
 	taskInput.value = '';
 	categorySelect.value = '';
 });
 
 taskList.addEventListener('change', (e) => {
-	if (!e.target.closest('.task-list__check')) return;
+	if (!e.target.classList.contains('task-list__checkbox')) return;
 
 	const taskItem = e.target.closest('.task-list__item');
 	const taskId = taskItem.dataset.id;
 
 	const targetTask = tasks.find((task) => task.id === taskId);
 	targetTask.completed = !targetTask.completed;
+	saveTasks();
 });
 
 taskList.addEventListener('click', (e) => {
@@ -105,8 +121,8 @@ taskList.addEventListener('click', (e) => {
 
 	const taskItem = e.target.closest('.task-list__item');
 	const taskId = taskItem.dataset.id;
+	const editTask = tasks.find((task) => task.id === taskId);
 
-	const editTask = tasks.find(task => task.id === taskId);
 	const editTaskText = taskItem.querySelector('.task-list__task-name');
 	const currentText = editTask.text;
 
@@ -128,14 +144,13 @@ taskList.addEventListener('click', (e) => {
 	});
 
 	editInput.addEventListener('blur', () => {
-		cancelEdit();
+		saveEdit();
 	});
 
 	function saveEdit() {
 		const newText = editInput.value.trim();
-
 		if (!newText) {
-			alert('Please enter a task.');
+			alert('Please enter a task');
 			editInput.focus();
 			return;
 		}
@@ -170,6 +185,21 @@ clearAllBtn.addEventListener('click', (e) => {
 	saveTasks();
 
 	taskList.innerHTML = '';
+});
+
+allTab.addEventListener('change', () => {
+	currentFilter = 'all';
+	renderTasks(currentFilter);
+});
+
+workTab.addEventListener('change', () => {
+	currentFilter = 'work';
+	renderTasks(currentFilter);
+});
+
+personalTab.addEventListener('change', () => {
+	currentFilter = 'personal';
+	renderTasks(currentFilter);
 });
 
 window.addEventListener('DOMContentLoaded', loadTasks);

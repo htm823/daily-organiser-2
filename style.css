@@ -116,7 +116,7 @@ input[type="radio"] {
 .tabs__all-tab:checked+label[for="all-tab"],
 .tabs__work-tab:checked+label[for="work-tab"],
 .tabs__personal-tab:checked+label[for="personal-tab"],
-.tabs > label:hover {
+.tabs>label:hover {
 	background-color: var(--color-primary-500);
 	color: var(--text-primary-100);
 }
@@ -176,7 +176,7 @@ input[type="radio"] {
 	border-radius: var(--radius-sm);
 }
 
-.task-list__checkbox:checked ~ .task-list__custom-checkbox {
+.task-list__checkbox:checked~.task-list__custom-checkbox {
 	background-color: var(--color-primary-500);
 	border: 1px solid var(--color-primary-500);
 	display: flex;
@@ -184,13 +184,32 @@ input[type="radio"] {
 	align-items: start;
 }
 
-.task-list__checkbox:checked ~ .task-list__custom-checkbox::before {
+.task-list__checkbox:checked~.task-list__custom-checkbox::before {
 	content: '\F272';
 	font-family: 'bootstrap-icons';
 	display: block;
 	width: 1.8rem;
 	height: 1.8rem;
 	color: var(--text-primary-100);
+}
+
+.task-list__task-name {
+	padding: var(--spacing-sm);
+}
+
+.task-list__edit-input {
+	display: block;
+	width: 100%;
+	font-size: 1.8rem;
+	border: 2px solid var(--stroke-dark);
+	border-radius: var(--radius-sm);
+	padding: var(--spacing-sm);
+	color: var(--text-primary-500);
+}
+
+.task-list__edit-input:focus {
+	outline: 2px solid var(--color-primary-500);
+	border: none;
 }
 
 .task-list__category {
@@ -201,24 +220,23 @@ input[type="radio"] {
 	color: #7CAF82;
 	background-color: #EBF5EC;
 	border: 1px solid #7CAF82;
-	padding: 0 var(--spacing-sm);
-	border-radius: var(--radius-lg);
+	padding: 0 var(--spacing-md);
+	border-radius: var(--radius-sm);
 }
 
 .task-list__category--personal {
 	color: #D99BAD;
 	background-color: #FCF0F3;
 	border: 1px solid #D99BAD;
-	padding: 0 var(--spacing-sm);
-	border-radius: var(--radius-lg);
+	padding: 0 var(--spacing-md);
+	border-radius: var(--radius-sm);
 }
 
 .task-list__item-right {
 	display: flex;
-	justify-content: space-between;
+	justify-content: end;
 	align-items: center;
-	gap: var(--spacing-xl);
-	width: 30%;
+	gap: var(--spacing-md);
 }
 
 .task-list__btns {
@@ -273,5 +291,9 @@ input[type="radio"] {
 
 	.task-form-btn {
 		margin: var(--spacing-xl) auto var(--spacing-lg) auto;
+	}
+
+	.task-list__item-right {
+		gap: var(--spacing-xl);
 	}
 }
