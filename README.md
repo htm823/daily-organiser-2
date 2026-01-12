@@ -58,5 +58,3 @@ Current functionality is stable, with additional features planned to enhance usa
 
 
 ## 🌐　Live Demo
-
-https://daily-origaniser2.vercel.app/
