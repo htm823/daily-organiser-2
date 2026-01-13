@@ -5,6 +5,9 @@ It is designed to help organise daily tasks with categories, filtering, and a cl
 
 The project focuses on clear structure, fundamental JavaScript logic, and incremental improvement.
 
+## 🌐　Live Demo
+https://daily-organiser-2.vercel.app/
+
 ## ✨ Features
 
 - Create, read, update, and delete tasks (CRUD)
@@ -30,19 +33,6 @@ The project focuses on clear structure, fundamental JavaScript logic, and increm
 - Responsive design already in place, with room for further refinement
 - UI decisions prioritise clarity and usability over visual complexity
 
-## 🚀 Getting Started
-
-You can run this project locally by cloning the repository and opening the HTML file in your browser.
-
-```bash
-git clone https://github.com/your-username/daily-organiser.git
-cd daily-organiser
-```
-
-Once cloned, simply open `index.html` in your preferred web browser.
-
-No build tools or additional dependencies are required.
-
 ## 🔮 Planned Improvements
 
 - Further UI polish (colour palette, spacing, and visual balance)
@@ -55,6 +45,3 @@ No build tools or additional dependencies are required.
 
 This project is actively maintained and iteratively improved.  
 Current functionality is stable, with additional features planned to enhance usability and flexibility.
-
-
-## 🌐　Live Demo
