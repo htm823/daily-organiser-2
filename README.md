@@ -1,60 +1,30 @@
-# 📆 Daily Organiser
+# Daily Organizer
 
-Daily Organiser is a simple task management application built with vanilla JavaScript.  
-It is designed to help organise daily tasks with categories, filtering, and a clean, minimal interface.
+A simple task management app to categorize each task with separate tabs.
 
-The project focuses on clear structure, fundamental JavaScript logic, and incremental improvement.
+## 🚀 Site URL
+https://daily-organiser-2.vercel.app/
+
+## 📸 Preview
+![Daily Organizer 2](./do2_1.gif)
 
 ## ✨ Features
+- **Task Management**: Add, delete, and clear all tasks with ease.
+- **Categories**: Organize tasks into `Work` or `Personal` and filter by category.
+- **Task Status**: Mark tasks as complete with a simple toggle.
+- **Data Persistence**: Saves your tasks automatically using `localStorage`.
+- **Responsive Design**: Optimized for both mobile and desktop screens.
 
-- Create, read, update, and delete tasks (CRUD)
-- Assign categories to tasks (Work / Personal)
-- Filter tasks by category (All / Work / Personal)
-- Mark tasks as completed with a strikethrough effect
-- Custom-styled checkbox for improved visual clarity
-- Clear all tasks with a single action
-- Responsive layout for different screen sizes
-- Persist tasks using localStorage
+## 🛠 Tech Stack
+- HTML
+- CSS
+- Vanilla JavaScript
 
-## 🧠 How It Works
+## 🔮 Future Updates
+- UI refinement (spacing, colors, layout)
 
-- Tasks are stored in localStorage to persist data between sessions
-- Filtering is handled by separating application state from UI rendering
-- UI updates are driven by task state changes rather than direct DOM manipulation
-- The project is implemented without frameworks to focus on core JavaScript fundamentals
-
-## 🎨 Design Notes
-
-- Minimal and distraction-free layout
-- Clear visual hierarchy and spacing
-- Responsive design already in place, with room for further refinement
-- UI decisions prioritise clarity and usability over visual complexity
-
-## 🚀 Getting Started
-
-You can run this project locally by cloning the repository and opening the HTML file in your browser.
-
-```bash
-git clone https://github.com/your-username/daily-organiser.git
-cd daily-organiser
-```
-
-Once cloned, simply open `index.html` in your preferred web browser.
-
-No build tools or additional dependencies are required.
-
-## 🔮 Planned Improvements
-
-- Further UI polish (colour palette, spacing, and visual balance)
-- Light and dark mode toggle
-- Date input for tasks
-- Task filtering by date
-- Sub-categories and more granular filtering options
-
-## 📌 Status
-
-This project is actively maintained and iteratively improved.  
-Current functionality is stable, with additional features planned to enhance usability and flexibility.
-
-
-## 🌐　Live Demo
+## ⚖️ License & Usage
+- **Purpose**: Portfolio use only
+- **Accessibility**: Publicly accessible
+- **License**: Not open-source
+- **Restrictions**: Do Not copy, redistribute, or use the code for commercial or personal projects without explicit permission
