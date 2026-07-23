@@ -12,7 +12,7 @@ Built with HTML, CSS, and JavaScript.
 👉🏻 https://daily-organiser-2.vercel.app/
 
 ## Preview
-![Daily Organiser](./do2_1.gif)
+![Daily Organiser](./daily-orgniser.gif)
 
 ## Background
 While using Notion on a daily basis, I realised that the feature I relied on most was its to-do list. This inspired me to build a lightweight task management application focused on only the essential functionality.

@@ -14,7 +14,7 @@ HTML、CSS、JavaScriptを用いて開発しました。
 
 ## Preview
 
-![Daily Organiser](./do2_1.gif)
+![Daily Organiser](./daily-orgniser.gif)
 
 ## Background
 
